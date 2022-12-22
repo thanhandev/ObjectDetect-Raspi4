@@ -1,0 +1,80 @@
+1."person" - con người
+2."bicycle" - xe đạp
+3."car" - xe hơi
+4."motorcycle" - xe máy
+5."airplane" - máy bay
+6."bus" - xe buýt
+7."train" - tàu hoả
+8."truck" - xe tải
+9."boat" - thuyền
+10."traffic light" - đèn giao thông
+11."fire hydrant" - bình cứu hoả
+12."stop sign" - biển báo dừng
+13."parking meter" - vạch đỗ xe
+14."bench" - ghế dài
+15."bird" - con chim
+16."cat" - con mèo
+17."dog" - con chó
+18."horse" - con ngựa
+19."sheep" - con cừu
+20."cow" - con bò
+21."elephant" - con voi
+22."bear" - con gấu
+23."zebra" - con ngựa vằn
+24."giraffe" - con hươu cao cổ
+25."backpack" - ba lô
+26."umbrella" - cái ô
+27."handbag" - túi xách
+28."tie" - vòng buộc tóc
+29."suitcase" - cái va li
+30."frisbee" - cái đĩa nhựa
+31."skis" - ván trượt
+32."snowboard" - ván trượt tuyết
+33."sports ball" - quả bóng
+34."kite" - con diều
+35."baseball bat" - gậy bóng chày
+36."baseball glove" - găng tay bóng chày
+37."skateboard" - ván trượt
+38."surfboard" - ván lướt sóng
+39."tennis racket" - vợt tennis
+40."bottle" - cái chai
+41."wine glass" - ly rượu
+42."cup" - cái cốc
+43."fork" - cái nĩa
+44."knife" - cái dao
+45."spoon" - cái thìa
+46."bowl" - cái bát
+47."banana" - qủa chuối
+48."apple" - quả táo
+49."sandwich" - bánh mì sandwich
+50."orange" - quả cam
+51."broccoli" - bông cải xanh
+52."carrot" - củ cà rốt
+53."hot dog" - bánh mì kẹp xúc xích
+54."pizza" - bánh pizza
+55."donut" - bánh vòng
+56."cake" - bánh kẹo
+57."chair" - cái ghế
+58."couch" - cần câu
+59."potted plant" - chậu cây cảnh
+60."bed" - cái giường ngủ
+61."dining table" - bàn ăn tối
+62."toilet" - bồn cầu
+63."tv" - ti vi
+64."laptop" - máy tính cá nhân
+65."mouse" - chuột máy tính
+66."remote" - điều khiển
+67."keyboard" - bàn phím
+68."cell phone" - điện thoại di động
+69."microwave" - lò vi sóng
+70."oven" - bếp
+71."toaster" - lò nướng bánh
+72."sink" - bồn rửa
+73."refrigerator" - tủ lạnh
+74."book" - quyển sách
+75."clock" - đồng hồ
+76."vase" - lọ hoa
+77."scissors" - cây kéo
+78."teddy bear" - gấu bông
+79."hair drier" - máy sấy tóc
+80."toothbrush" - bàn chải đánh răng
