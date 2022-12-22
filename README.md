@@ -7,14 +7,12 @@ SSD Model Object Detect
   <img src="doc/Thumbnail.png">
 </p>
 
-## Table of Contents
 1. [Setting up the Raspberry Pi and Getting Updates](https://github.com/armaanpriyadarshan/Object-Detection-on-Raspberry-Pi/blob/master/README.md#step-1-setting-up-the-raspberry-pi-and-getting-updates)
 2. [Organizing our Workspace and Virtual Environment](https://github.com/armaanpriyadarshan/Object-Detection-on-Raspberry-Pi#step-2-organizing-our-workspace-and-virtual-environment)
 3. [Installing TensorFlow, OpenCV, and other Prerequisites](https://github.com/armaanpriyadarshan/Object-Detection-on-Raspberry-Pi/blob/master/README.md#step-3-installing-tensorflow-opencv-and-other-prerequisites)
 4. [Preparing our Object Detection Model](https://github.com/armaanpriyadarshan/Object-Detection-on-Raspberry-Pi/blob/master/README.md#step-4-preparing-our-object-detection-model)
 5. [Running Object Detection on Image, Video, or Pi Camera](https://github.com/armaanpriyadarshan/Object-Detection-on-Raspberry-Pi/blob/master/README.md#step-5-running-object-detection-on-image-video-or-pi-camera)
 
-## Step 1: Setting up the Raspberry Pi and Getting Updates
 <p align="left">
   <img src="doc/Camera Interface.png">
 </p>
@@ -114,8 +112,6 @@ If everything went according to plan, the object_detection module should import 
 
 **Note: Similar to the Virtual Environment, everytime you start a new terminal, the $PYTHONPATH variable set by the shell script will no longer be active. This means you will not be able to import the object_detection module. You can reactivate it manually with ```export PYTHONPATH=$PYTHONPATH:/home/pi/tensorflow/models/research:/home/pi/tensorflow/models/research/slim``` everytime you open a new terminal or issue ```echo "export PYTHONPATH=$PYTHONPATH:/home/pi/tensorflow/models/research:/home/pi/tensorflow/models/research/slim" >> ~/.bashrc```. This sets the system variable upon opening a new terminal.**
 
-## Step 4: Preparing our Object Detection Model
-
 For this step, there are two options. You can use one of the TensorFlow Pre-Trained Object Detection Models which can be found in the [TensorFlow 2 Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md). Or you can train your own Custom Object Detector with the TensorFlow 2 Custom Object Detection API. Later on, I will cover both of these options a bit more extensively. First let's create a directory to store our models. Since we already have a folder named ```models```, let's call it ```od-models```.
 
 ```
@@ -127,11 +123,6 @@ Then let's cd into it with
 ```
 cd od-models
 ```
-
-Now, let's cover both options with more detail.
-
-### Option 1: Using a TensorFlow 2 Pre-Trained Model
-For this guide, I will be using this option. TensorFlow's pre-trained models are trained on the [2017 COCO Dataset](https://cocodataset.org/#home) containing a variety of common, everyday, objects. TensorFlow 2's new ```saved_model``` format consists of a ```saved_model.pb``` and a ```variables``` directory. These two hold weights and the actual inference graph for object detection. The TensorFlow 2 Model Zoo can be found [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md).
 
 <p align="left">
   <img src="doc/modelzoo.png">
@@ -155,53 +146,3 @@ mv ssd_mobilenet_v2_320x320_coco17_tpu-8 my_mobilenet_model
 ```
 
 Once done so, our model should be ready for testing!
-
-### Option 2: Using a TensorFlow Custom Object Detector
-If you wanted to detect an object that's not in the COCO Dataset, this is the option for you! Recently, I made a video with more details on training a Custom Object Detector with TensorFlow 2. 
-
-[![Link to my vid](https://github.com/armaanpriyadarshan/Object-Detection-on-Raspberry-Pi/blob/master/doc/Thumbnail2.png)](https://www.youtube.com/watch?v=oqd54apcgGE)
-
-After you've followed all the steps mentioned in the video, you should end up with a ```labelmap.pbtxt``` file and a ```saved_model``` folder. You'll need to transfer these two files to our ```od-models``` directory on the Raspberry Pi. I usually use an SFTP Client such as [WinSCP](https://winscp.net/eng/index.php) to transfer files, but you can use whatever you want. Once your ```od-models``` directory contains your ```labelmap.pbtxt``` and ```saved_model```, you are ready to test!
-
-## Step 5: Running Object Detection on Image, Video, or Pi Camera
-
-Once your model is ready, cd into the ```tensorflow``` directory with
-
-```
-cd ~/tensorflow
-```
-
-If you used a pre-trained model, the default programs should work. Let's run the Pi Camera Script with
-
-```
-python TF-PiCamera-OD.py
-```
-
-If you are using a Custom Object Detection Model, the usage for the Pi Camera Script looks like
-
-```
-usage: TF-PiCamera-OD.py [-h] [--model MODEL] [--labels LABELS]
-                         [--threshold THRESHOLD]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --model MODEL         Folder that the Saved Model is Located In
-  --labels LABELS       Where the Labelmap is Located
-  --threshold THRESHOLD
-                        Minimum confidence threshold for displaying detected
-                        objects
-```
-
-If you were wondering about the arguments taken by the other programs, just use -h or --help after the command. An example command would look like
-
-```
-python TF-PiCamera-OD.py --model od-models --labels od-models/labelmap.pbtxt
-```
-
-It takes about 3 minutes for the model to load, but a window with results should open up. Your ouputs should look something like this
-
-<p align="left">
-  <img src="doc/demo.png"
-</p>
-  
-Congratulations! This means we're successfully performing real-time object detection on the Raspberry Pi! Now that you've tried out the Pi Camera, why not one of the other scripts? Over the next weeks I'll continue to add on to this repo and tinker with the programs to make them better than ever! If you find something cool, feel free to share it, as others can also learn! And if you have any errors, just raise an issue and I'll be happy to take a look at it. Great work, and until next time, bye!
